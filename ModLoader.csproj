@@ -39,7 +39,6 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackDirectory>E:\development\dotnet\Krahforst\BetterBeatSaber\Core\pack</PackDirectory>
         <BeatSaberDir>D:\Games\Beat Saber\Installed Versions\Beat Saber 1.22.1</BeatSaberDir>
         <BeatSaberLibsDir>$(BeatSaberDir)\Libs</BeatSaberLibsDir>
         <BeatSaberPluginsDir>$(BeatSaberDir)\Plugins</BeatSaberPluginsDir>
@@ -98,10 +97,10 @@
     
     <ItemGroup>
         <EmbeddedResource Include="manifest.json" />
+        <EmbeddedResource Include="description.md" />
     </ItemGroup>
     
     <ItemGroup>
-      <Content Include="description.md" />
       <Content Include="LICENSE" />
       <Content Include="README.md" />
     </ItemGroup>
