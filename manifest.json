@@ -1,0 +1,15 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "ModLoader",
+  "name": "BetterBeatSaber ModLoader",
+  "author": "",
+  "version": "0.0.1",
+  "description": [
+    "#![BetterBeatSaber.ModLoader.description.md]",
+    "ModLoader is a mod that allows you to load other mods into the game. (wow ...)"
+  ],
+  "gameVersion": "1.22.1",
+  "dependsOn": {
+    "BSIPA": "^4.0.0"
+  }
+}

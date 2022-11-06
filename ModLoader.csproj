@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{A60044E7-8CFA-418F-8906-8471588D6C01}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>ModLoader</RootNamespace>
+        <AssemblyName>ModLoader</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackDirectory>E:\development\dotnet\Krahforst\BetterBeatSaber\Core\pack</PackDirectory>
+        <BeatSaberDir>D:\Games\Beat Saber\Installed Versions\Beat Saber 1.22.1</BeatSaberDir>
+        <BeatSaberLibsDir>$(BeatSaberDir)\Libs</BeatSaberLibsDir>
+        <BeatSaberPluginsDir>$(BeatSaberDir)\Plugins</BeatSaberPluginsDir>
+        <BeatSaberManagedDir>$(BeatSaberDir)\Beat Saber_Data\Managed</BeatSaberManagedDir>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Reference Include="IPA.Loader">
+            <HintPath>$(BeatSaberManagedDir)\IPA.Loader.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>$(BeatSaberManagedDir)\UnityEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(BeatSaberManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Zenject">
+            <HintPath>$(BeatSaberManagedDir)\Zenject.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="0Harmony">
+            <HintPath>$(BeatSaberLibsDir)\0Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Main">
+            <HintPath>$(BeatSaberManagedDir)\Main.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Mono.Cecil.dll">
+            <HintPath>$(BeatSaberLibsDir)\Mono.Cecil.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(BeatSaberLibsDir)\Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Hive.Versioning">
+            <HintPath>$(BeatSaberLibsDir)\Hive.Versioning.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Compile Include="ModLoaderPlugin.cs" />
+        <Compile Include="ModLoader.cs" />
+        <Compile Include="ModLoaderPluginConfig.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <EmbeddedResource Include="manifest.json" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Content Include="description.md" />
+      <Content Include="LICENSE" />
+      <Content Include="README.md" />
+    </ItemGroup>
+    
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+</Project>
